@@ -9,13 +9,13 @@ show tables;
 select * from car;
 
 
---- TO SHOW ALL THE CAR MODELS WITH YEAR----
+--- to show all the car models with year----
 
 SELECT serial_no,brand,model,year from car;
 
 
 
---- TO SHOW UNIQUE CARS IN 2018 ---
+--- to show unique cars in 2018 ---
 
 SELECT distinct brand, model
 from car
@@ -24,7 +24,7 @@ where year = 2018;
 
 
 
----- TO SHOW NO.OF  BRANDS FROM EVERY YEAR FOR SALE ---
+--- to show no.of  brands from every year for sale ---
 
 SELECT brand,year,count(BRAND)
 over (partition by year) AS NO_OF_CARS
@@ -33,7 +33,7 @@ from car;
 
 
 
----- TO SHOW MAX NUMBER OF BRANDS IN A YEAR FOR SALE ---
+---- to show max number of brands in a year for sale ---
 
 SELECT brand,year,count(BRAND)
 over (partition by year)
@@ -42,7 +42,7 @@ from car;
 
 
 
------ TO SHOW MOST EXPENSIVE CAR FOR SALE ----
+----- to show most expensive car for sale ----
 
 SELECT BRAND,MODEL,YEAR,
 MAX(PRICE)
@@ -50,7 +50,7 @@ FROM CAR;
 
 
 
------ TO SHOW MOST EXPENSIVE CAR IN EACH YEAR FOR SALE----
+----- to show most expensive car in each year for sale----
 
 
 SELECT BRAND,MODEL,YEAR,
@@ -59,9 +59,9 @@ FROM CAR GROUP BY YEAR;
 
 
 
---- NO CARS WILL HAVE PRICE 0,IN 1997 WE CAN SEE THAT CAR WITH PRICE 0
+--- NO CARS WILL HAVE PRICE 0,IN 1997 WE CAN SEE THAT CAR WITH PRICE 0 ---
 
-------- TO CHECK NO. OF CLEAN VEHICLES IN A YEAR FOR SALE ----
+------- to check no. of clean vehicles in a year for sale ----
 
 SELECT title_status,year,count(vin)
 from car 
@@ -70,7 +70,7 @@ group by year;
 
 
 
---- TO GET THE COUNT OF VEHICLES IN EACH BRAND FOR SALE ---
+--- to get the count of vehicles in each brand for sale ---
 
 
 SELECT brand,count(vin) as no_of_cars
