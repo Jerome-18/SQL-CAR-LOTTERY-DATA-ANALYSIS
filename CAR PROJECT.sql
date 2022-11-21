@@ -24,7 +24,7 @@ where year = 2018;
 
 
 
----- TO SHOW NO.OF  BRANDS FROM EVERY YEAR ---
+---- TO SHOW NO.OF  BRANDS FROM EVERY YEAR FOR SALE ---
 
 SELECT brand,year,count(BRAND)
 over (partition by year) AS NO_OF_CARS
@@ -33,7 +33,7 @@ from car;
 
 
 
----- TO SHOW MAX NUMBER OF BRANDS IN A YEAR ---
+---- TO SHOW MAX NUMBER OF BRANDS IN A YEAR FOR SALE ---
 
 SELECT brand,year,count(BRAND)
 over (partition by year)
@@ -42,7 +42,7 @@ from car;
 
 
 
------ TO SHOW MOST EXPENSIVE CAR ----
+----- TO SHOW MOST EXPENSIVE CAR FOR SALE ----
 
 SELECT BRAND,MODEL,YEAR,
 MAX(PRICE)
@@ -50,7 +50,7 @@ FROM CAR;
 
 
 
------ TO SHOW MOST EXPENSIVE CAR IN EACH YEAR ----
+----- TO SHOW MOST EXPENSIVE CAR IN EACH YEAR FOR SALE----
 
 
 SELECT BRAND,MODEL,YEAR,
@@ -59,9 +59,9 @@ FROM CAR GROUP BY YEAR;
 
 
 
---- NO CARS WILL HAVE PRICE 0,IN 1997 WE CAN SEE THAT ---
+--- NO CARS WILL HAVE PRICE 0,IN 1997 WE CAN SEE THAT CAR WITH PRICE 0
 
-------- TO CHECK NO OF CLEAN VEHICLES IN A YEAR ----
+------- TO CHECK NO. OF CLEAN VEHICLES IN A YEAR FOR SALE ----
 
 SELECT title_status,year,count(vin)
 from car 
@@ -70,7 +70,7 @@ group by year;
 
 
 
---- TO GET THE DISTRIBUTION BRANDWISE ---
+--- TO GET THE COUNT OF VEHICLES IN EACH BRAND FOR SALE ---
 
 
 SELECT brand,count(vin) as no_of_cars
@@ -80,7 +80,7 @@ order by no_of_cars ;
 
 
 
---- count the number of vehicles where the brand is mercedes or harleydaviidson and the vehicle is clean ---
+--- to get the count of vehicles where the brand is mercedes or harley davidson and the vehicle is clean available for sale---
 
 select brand,count(*)
 from car
@@ -90,7 +90,7 @@ group by brand;
 
 
 
----- get distribution of color wise when the brand is mercedes ---
+---- to get the count of vehicles for each color  when the brand is mercedes ---
 
 select color,count(*) as no_of_cars
 from car 
@@ -99,7 +99,7 @@ group by color;
 
 
 
--- get the distribution yearwise when the car is clean ---
+-- to get the count of vehicles for each year when the car is clean ---
 
 select year, count(*)
 from car
@@ -109,7 +109,7 @@ order by year;
 
 
 
---- get the brandwise distribution in descending order where the vehicle is clean ---
+--- to get the count of vehicles in descending order where the vehicle is clean ---
 
 SELECT brand,count(*) as num_of_vehicle
 from car
@@ -120,7 +120,7 @@ order by num_of_vehicle desc;
 
 
 
---- top 5 states with max number of cars ---
+--- top 5 states with max number of cars for sale ---
 
 select state,count(*) as no_of_cars
 from car
@@ -131,7 +131,7 @@ limit 5;
 
 
 
---- country with max number of cars  ---
+--- country with max number of cars for sale  ---
 
 select country, count(*) as max_cars
 from car
@@ -139,7 +139,7 @@ order by max_cars desc limit 1;
 
 
 
---- rank the car brands according to avg price ---
+--- ranking the car brands according to avg price ---
 
 
 select brand, avg_price, dense_rank() over(order by avg_price desc) as r from
@@ -161,7 +161,7 @@ group by brand,model) as car_price_avg;
 
 
 
---- rank the year based on number of cars -- run this
+--- ranking the year based on number of cars -- 
 
 select year,no_of_cars,dense_rank() over (order by no_of_cars desc) as ranking from
 (
@@ -171,7 +171,7 @@ group by year) as year_by_car;
 
 
 
---- which brand has the best mileage ---
+--- brand with the best mileage ---
 
 select brand,avg(mileage)
 from car
@@ -198,7 +198,7 @@ group by brand;
 
 
 
---- get the distribution of brands who have clean vehicle and the price is 0 ---
+--- to get the count of vehicles  for brands who have clean vehicle and the price is 0 ---
 
 select brand,count(brand) as no_of_cars
 from car 
@@ -207,7 +207,7 @@ group by brand;
 
 
 
---- get the distribution of brands who have salvage vehicle and the price is 0 in descending order---
+--- get the count of vehicles of brands who have salvage vehicle and the price is 0 in descending order---
 
 select brand,count(brand) as no_of_cars
 from car 
@@ -217,7 +217,7 @@ order by no_of_cars desc;
 
 
 
---- get same distribution yearwise instead of brand ---
+---get the count of vehicles for each year  who have salvage vehicle and the price is 0 in descending order ---
 
 select year,count(brand) as no_of_cars
 from car 
@@ -227,7 +227,7 @@ order by no_of_cars desc;
 
 
 
---- count cars for each brand who have the price above average ---
+--- count of cars for each brand who have the price above average ---
 
 select brand,count(vin) as no_of_cars from  car
 where price > (
@@ -249,7 +249,7 @@ from car;
 
 
 
---- get the distribution in each categories ---
+-- the count of vehicle in each category ---
 
 select vcondition,no_of_cars from 
 (select count(vin) as no_of_cars,
@@ -266,7 +266,7 @@ group by vcondition
 
 
 
---- for each category get the distribution brandwise ---
+--- for each category get the count of vehicles brandwise ---
 
 select brand,vcondition,no_of_cars from 
 (select brand,count(vin) as no_of_cars,
