@@ -1,10 +1,12 @@
 # SQL-US CARS DATASET
 ## Online Car Auction in North American
 
-### US Car's data was scraped from AUCTION EXPORT.com. This dataset included Information about 28 brands of clean and used vehicles for sale in US. Twelve features were assembled for each car in the dataset.
+### US Car's data was scraped from AUCTION EXPORT.com. This dataset included Information about 28 brands of clean and used vehicles for sale in US. In this dataset, you will find the 12 features that describe 2499 vehicles for sale in US.
 
 
 ### Features
+
+
 #### Price	-	      The sale price of the vehicle in the ad
 #### Years	-       The vehicle registration year
 #### Brand	- 	    The brand of car
@@ -16,3 +18,5 @@
 #### Title Status - This feature included binary classification, which are clean title vehicles and salvage insurance
 #### Lot	-         A lot number is an identification number assigned to a particular quantity or lot of material from a single manufacturer.For cars, a lot number is combined with a serial number to form the Vehicle Identification Number.
 #### Condition	-   Time
+
+
