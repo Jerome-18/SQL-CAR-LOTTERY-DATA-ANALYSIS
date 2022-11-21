@@ -5,8 +5,8 @@
 
 
 ### Features
-Price	-	  The sale price of the vehicle in the ad
-Years	-   The vehicle registration year
+#### Price	-	  The sale price of the vehicle in the ad
+#### Years	-   The vehicle registration year
 Brand	- 	The brand of car
 Model	- 	model of the vehicle
 Color	- 	Color of the vehicle
