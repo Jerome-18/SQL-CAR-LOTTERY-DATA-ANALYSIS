@@ -34,4 +34,4 @@ manually.
 
 ### ANALYSIS
 
-We started by looking at each columns of the data. I have used the general functions, aggregate functions, aggregate functions with window functions and wildcards
+We started by looking at each columns of the data. I have used the general functions, aggregate functions, aggregate functions with window functions , wildcards and case statements for writing the queries.
