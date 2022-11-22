@@ -1,7 +1,7 @@
 # SQL-US CARS DATASET
 
 In this project I am doing the analysis of the US cars auction dataset and finding out insights from the data using sql.
-## Online Car Auction in North American
+## Online Car Auction in North America
 
 
 ### About Data
