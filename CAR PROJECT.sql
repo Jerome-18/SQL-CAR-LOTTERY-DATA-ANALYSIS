@@ -137,7 +137,9 @@ limit 5;
 
 select COUNTRY, count(*) as MAX_CARS
 from car
-order by max_cars desc limit 1;
+group by country
+order by max_cars desc limit 1
+;
 
 
 
